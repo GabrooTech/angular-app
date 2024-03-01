@@ -1,0 +1,106 @@
+<app-navigation></app-navigation>
+<div *ngIf="isLoading">
+    <app-loading-spinner></app-loading-spinner>
+</div>
+<div class="user_crud_container">
+    <h1 class="user_crud_container_intor_text">Add <strong class="brake_point_strong_accessories">Accessories</strong> Proudct Page</h1>
+    <form (ngSubmit)="on_add_item(addProductForm)" #addProductForm="ngForm" class="add_product_form_main_class" id="main_form" *ngIf="!isLoading">
+        <option class="add_product_main_img_upload_box" #drop_area_main value=""
+        [style.backgroundImage]="'url()'"></option>
+        <input type="file" class="img_input" #input_box_main name="main_photo" hidden ngModel required>
+        <i class='bx bx-upload upload_img_add_product'  #icon_main ></i>
+        <p class="upload_img_add_product_text"  #text_main >Please upload the main image</p>
+        <div class="error"></div>
+        <div class="add_product_inputed_information_grid">
+            <div class="add_product_text_content_container">
+                <p class="add_product_input_disclaimer">Please input name of product</p>
+                <input type="text" class="add_product_product_name_input" name="product_name" value="" required ngModel #product_name_error_handler="ngModel"
+                [ngClass]="{ 'error_box' : !product_name_error_handler.valid && product_name_error_handler.touched}">
+                <label for="product_name" class="add_product_product_name">Product Name</label>
+                <div class="error"></div>
+            </div>
+            <div class="add_product_text_content_container">
+                <p class="add_product_input_disclaimer">this field must contain <strong>3</strong> keyword of brand</p>
+                <input type="text" class="add_product_product_name_input" name="link_word" value="" required ngModel minlength="3" maxlength="3">
+                <label for="product_name" class="add_product_product_name add_product_product_name_link_word">Link Word</label>
+                <div class="red-text add_product_product_error"></div>
+            </div>
+            <div class="add_product_text_content_container">
+                <p class="add_product_input_disclaimer">Please input price of product without $₾€</p>
+                <input type="number" class="add_product_product_name_input js_price" name="product_price" #product_price_input required ngModel>
+                <label for="product_price" class="add_product_product_name" id="add_product_product_price">Product Price</label>
+                <div class="red-text add_product_product_error"></div>
+            </div>
+            <div class="add_product_text_content_container">
+                <p class="add_product_input_disclaimer add_product_input_disclaimer_precentage">In case there is no sale please input just 0</p>
+                <input type="number" class="add_product_product_name_input js_off_price" name="off_price" #off_price_input required ngModel min="0">
+                <label for="off_price" class="add_product_product_name add_product_product_sale" id="add_product_sale_prcentage">Sale %</label>
+                <div class="red-text add_product_product_error"></div>
+            </div>
+        </div>
+        <div class="add_product_additional_png_grid">
+            <div class="add_product_img_grid_outer_source">
+                <option class="add_product_main_img_upload_box add_product_additional_img_upload_box" #drop_area_second 
+                value="" [style.backgroundImage]="'url()'"></option>
+                <div class="add_img_outer_grid_inner_second_box">
+                    <input type="file" class="img_input" #input_box_second id="input_file_second" name="second_img" hidden ngModel required>
+                    <i class='bx bx-upload second_upload_img_add_product' #icon_second ></i>
+                    <p class="second_upload_img_add_product_text" #text_second >Please upload the second image</p>
+                    <div class="red-text add_product_product_error second_img_error"></div>
+                </div>
+            </div>
+            <div class="add_product_img_grid_outer_source">
+                <option class="add_product_main_img_upload_box add_product_additional_img_upload_box" #drop_area_third
+                value="" [style.backgroundImage]="'url()'"></option>
+                <div class="add_img_outer_grid_inner_second_box">
+                <input type="file" class="img_input" #input_box_third id="input_file_third" name="third_img" hidden ngModel required>
+                <i class='bx bx-upload third_upload_img_add_product' #icon_third ></i>
+                <p class="third_upload_img_add_product_text" #text_third >Please upload the third image</p>
+                <div class="red-text add_product_product_error third_img_error"></div>
+            </div>
+            </div>
+            <div class="add_product_img_grid_outer_source">
+                <option class="add_product_main_img_upload_box add_product_additional_img_upload_box" #drop_area_fourth 
+                value="" [style.backgroundImage]="'url()'"></option>
+                <div class="add_img_outer_grid_inner_second_box">
+                <input type="file" class="img_input" #input_box_fourth id="input_file_fourth" name="fourth_img" hidden ngModel required>
+                <i class='bx bx-upload fourth_upload_img_add_product' #icon_fourth ></i>
+                <p class="fourth_upload_img_add_product_text" #text_fourth >Please upload the fourth image</p>
+                <div class="red-text add_product_product_error fourth_img_error"></div>
+            </div>
+            </div>
+            <div class="add_product_img_grid_outer_source">
+                <option class="add_product_main_img_upload_box add_product_additional_img_upload_box" #drop_area_fifth
+                value="" [style.backgroundImage]="'url()'"></option>
+            <div class="add_img_outer_grid_inner_second_box">
+                <input type="file" class="img_input" #input_box_fifth id="input_file_fifth" name="fifth_img" hidden ngModel required>
+                <i class='bx bx-upload fifth_upload_img_add_product' #icon_fifth ></i>
+                <p class="fifth_upload_img_add_product_text" #text_fifth >Please upload the fifth image</p>
+                <div class="red-text add_product_product_error fifth_img_error"></div>
+            </div>
+            </div>
+        </div>
+         <div class="add_product_deescription_text_area">
+            <textarea name="product_description" id="description" class="add_product_input_textarea" placeholder="Please enter description of product" ngModel 
+            #product_description_error_handler="ngModel" [ngClass]="{ 'error_box' : !product_description_error_handler.valid && product_description_error_handler.touched}"
+            required></textarea>
+            <div class="red-text add_product_product_error"></div>
+        </div>
+        <div class="last_output_add_product_container">
+            <input type="text" mame="type" value="Accessories" ngModel [ngModelOptions]="{standalone: true}">
+            <input type="number" name="final_price" #final_price_output [(ngModel)]="final_price_outter">
+            <input type="text" name="dominant_color" #dominant_color_output [(ngModel)]="dominant_color">
+        </div>
+        <div class="add_product_submit_button_container">
+            <div class="buttonero user_crud_sumbit add_product_submit_button">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <button class="button_test" type="submit">Submit</button>
+            </div>
+        </div>
+    </form>
+</div>
+<canvas id="preview" style="display: none;" #canvas></canvas>
+<canvas id="canvas" style="display: none;" #preview></canvas>

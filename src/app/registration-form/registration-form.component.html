@@ -1,0 +1,45 @@
+<app-navigation></app-navigation>
+<div class="login_container">
+    <div class="form_box">
+        <div class="form_value">
+            <div *ngIf="isLoading">
+                <app-loading-spinner></app-loading-spinner>
+            </div>
+            <form #registration_form="ngForm" (ngSubmit)="on_submit(registration_form)" *ngIf="!isLoading">
+                <h2>Register</h2>
+                <div class="inputbox">
+                    <input type="text" name="username" class="login_input" value="" ngModel required #username="ngModel">
+                    <i class='bx bxs-user'></i>
+                    <label for="username" class="label" [ngClass]="{ 'error' : !username.valid && username.touched}">User Name</label>
+                    <div class="error" *ngIf="!username.valid && username.touched">Make Sure that User Name field is valid!</div>
+                </div>
+                <div class="inputbox">
+                    <input type="text" name="email" class="login_input" value="" ngModel required email #email="ngModel">
+                    <i class='bx bx-envelope' ></i>
+                    <label for="email" class="label" [ngClass]="{ 'error' : !email.valid && email.touched}">Email</label>
+                    <div class="error" *ngIf="!email.valid && email.touched">Make Sure that the email is valid!</div>
+                </div>
+                <div class="inputbox">
+                    <input #passwordInput type="password" name="password" value="" class="login_input" id="Password" ngModel required minlength="6" #password="ngModel">
+                    <div class="show" #showButton> </div>
+                    <div class="strength" #strengthContainer></div>
+                    <i class='bx bxs-lock-alt login_lock registration_lock' ></i>
+                    <label for="passwords" class="label" [ngClass]="{ 'error' : !password.valid && password.touched}">Password</label>
+                    <div class="error" *ngIf="!password.valid && password.touched">Make Sure that the password is 6 or more characters long!</div>
+                    <div class="error" *ngIf="error">
+                        <p>{{ error }}</p>
+                    </div>
+                </div>
+                <div class="buttonero">
+                    <span [ngStyle]="{ 'opacity': registration_form.valid ? '1' : '0' }"></span>
+                    <span [ngStyle]="{ 'opacity': registration_form.valid ? '1' : '0' }"></span>
+                    <span [ngStyle]="{ 'opacity': registration_form.valid ? '1' : '0' }"></span>
+                    <span [ngStyle]="{ 'opacity': registration_form.valid ? '1' : '0' }"></span>
+                    <button class="button_test" type="submit" [ngClass]="{ 'disabled-icon': !registration_form.valid }">Sign up</button>
+                </div>
+                <div class="register">
+                    <p>Get back to the <a routerLink="/login">login Page</a></p>
+                </div>
+            </form>
+        </div>
+    </div>

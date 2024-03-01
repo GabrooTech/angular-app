@@ -1,0 +1,70 @@
+<aside class="sidebar" #sidebar >
+    <div class="slider" #spdr></div>
+    <img src="assets/img/logo.png" alt="logo" class="company_logo null_txtdecor">
+    <ul class="sidebar_ul">
+        <li class="aside_list">
+            <div class="bar" #btn>
+                <fa-icon class="fa-solid fa-bars" id="btn" [icon]="fa_bars"></fa-icon>
+            </div>
+        </li>
+        <li class="aside_list" [class.disabled-icon]="disableIcons">
+            <a routerLink="/home" class="aside_link">
+                <div class="test">
+                    <div class="home_color tooltip_asigner">
+                        <i class="bx bx-home-smile null_txtdecor home_center"></i>
+                    </div>
+                    <span class="tooltip">Home</span>
+                </div>
+            </a>
+        </li>
+        <li class="aside_list" [class.disabled-icon]="disableIcons" *ngIf="is_authetificated && is_admin">
+            <a routerLink="/dashboard" class="aside_link">
+                <div class="test">
+                    <div class="dashboard_color tooltip_asigner">
+                        <i class="bx bxs-dashboard null_txtdecor dashboard_center" ></i>
+                    </div>
+                    <span class="tooltip">Dashboard</span>
+                </div>
+            </a>
+        </li>
+        <li class="aside_list" [class.disabled-icon]="disableIcons">
+            <a class="aside_link">
+                <div class="test">
+                    <div class="chat_color tooltip_asigner">
+                        <i class="bx bx-chat null_txtdecor chat_center">
+                        </i>
+                    </div>
+                    <span class="tooltip">Chat</span>
+                </div>
+            </a>
+        </li>
+        <li class="aside_list" [class.disabled-icon]="disableIcons">
+            <a  class="aside_link">
+                <div class="test">
+                    <div class="forum_color tooltip_asigner">
+                        <i class="bx bx-message-square-add null_txtdecor forum_center">
+                        </i>
+                    </div>
+                    <span class="tooltip">Forum</span>
+                </div>
+            </a>
+        </li>
+        <li class="aside_list bottom" [class.disabled-icon]="disableIcons"> 
+        <div class="user"></div>
+            <a routerLink="/login" class="aside_link">
+                <div class="test" *ngIf="!is_authetificated">
+                    <div class="login_bar tooltip_asigner">
+                        <i class="bx bx-log-in null_txtdecor login_center"></i>
+                    </div>
+                    <span class="tooltip_login">Log in</span>
+                </div>
+                <div class="test" *ngIf="is_authetificated" (click)="on_log_out()">
+                    <div class="login_bar tooltip_asigner">
+                        <i class="bx bx-log-out null_txtdecor login_center"></i>
+                    </div>
+                    <span class="tooltip_login">Log out</span>
+                </div>
+            </a>
+        </li>
+    </ul>
+</aside>

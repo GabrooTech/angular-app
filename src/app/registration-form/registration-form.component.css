@@ -1,0 +1,11 @@
+.disabled-icon {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+input.ng-invalid.ng-touched{
+    border-bottom: 2px solid red;
+}
+.error{
+    margin-top: 15px;
+    color: red;
+}

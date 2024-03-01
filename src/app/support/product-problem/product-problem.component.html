@@ -1,0 +1,18 @@
+<app-navigation></app-navigation>
+<div class="support_container_submition">
+    <div class="support_submision_box">
+        <form #ticketForm="ngForm" (ngSubmit)="on_add_item(ticketForm)" class="support_final_form">
+            <div class="names_of_content_support">
+                <h2>Content: Product Problem</h2>
+                <h5>Describe your Problem</h5>
+            </div>
+            <div class="names_of_content_support_outsource">
+                <textarea name="issue" id="issue" class="support_input_textarea" placeholder="Enter your problem here" 
+                ngModel required #issue="ngModel" [ngClass]="{ 'error_box' : !issue.valid && issue.touched}"></textarea>
+                <div class="error" *ngIf="!issue.valid && issue.touched">Description field is empty!</div>
+            </div>
+            <button class="btn-10" type="submit" [disabled]="ticketForm.invalid">Submit</button>
+        </form>
+    </div>
+</div>
+<app-footer></app-footer>

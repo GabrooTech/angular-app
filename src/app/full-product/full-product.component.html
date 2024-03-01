@@ -1,0 +1,45 @@
+<app-navigation></app-navigation>
+    <div class="checkout_container">
+        <div class="check-out-elemnts" *ngIf="product">
+                <div class="check-out-elemnt-first-div manles">
+                    <img [src]="'img/' + product.main_img" alt="in-product-img" id="output" class="check-out-elemnts-main-img xzoom mnimg" draggable="false">
+                </div>
+                <div class="check-out-elemnt-second-div">
+                    <p class="check-out-elemnt-second-div-text" id="descriptionOutput">{{ product.product_description}}</p>
+                    <div class="check-out-elemnt-second-div-price-tag">
+                        <h1 class="check-out-elemnt-second-div-price-tag-element" id="price">{{ product.final_price }}₾</h1>
+                    </div>
+                </div>
+                <div class="check-out-elemnt-third-div">
+                    <div class="check-out-elemnt-third-div-altimiges altimiges">
+                        <div class="check-out-elemnt-third-div-altimige coetdaf altimg">
+                            <img alt="Product first-main alt imige"  id="altotp" class="coetdaf altmater" draggable="false" [src]="'img/' + product.main_img">
+                        </div>
+                        <div class="check-out-elemnt-third-div-altimige altimg filtimg">
+                            <img alt="Product second alt imige" id="secalt" class="fiximg altmater" draggable="false" [src]="'img/' + product.second_img">
+                        </div>
+                        <div class="check-out-elemnt-third-div-altimige altimg">
+                            <img alt="Product third alt imige" id="thialt" class="fiximg altmater" draggable="false" [src]="'img/' + product.third_img">
+                        </div>
+                        <div class="check-out-elemnt-third-div-altimige altimg">
+                            <img alt="Product fourth alt imige" id="foralt" class="fiximg altmater" draggable="false" [src]="'img/' + product.fourth_img">
+                        </div>
+                        <div class="check-out-elemnt-third-div-altimige coetdal altimg">
+                            <img alt="Product fifth alt imige" id="fifalt" class="coetdal altmater" draggable="false" [src]="'img/' + product.fifth_img">
+                        </div>
+                    </div>
+                </div>
+                <div class="check-out-elemnt-fourth-div">
+                    <a href="cart.html">
+                        <div class="counter-container">
+                            <span id="counter">1</span>
+                            <i class='bx bx-cart'></i>
+                        </div>
+                    </a>
+                    <button id="add-animation">Add to Cart</button>
+                </div>
+        </div>
+    </div>
+<app-footer></app-footer>
+    
+

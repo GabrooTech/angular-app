@@ -1,0 +1,15 @@
+<app-navigation></app-navigation>
+<div class="user_crud_container ticket_detailed_container" *ngIf="ticket">
+    <div class="detailed_ticket_box_header">
+        <h1>Main Subject: <strong class="strong_for_support">{{ ticket.issue }}</strong></h1>
+    </div>
+    <div class="detailed_ticket_box">
+        <div class="ticket_content">Ticket Content</div>
+        <div class="ticket_content_box">{{ ticket.issue_description }}</div>
+    </div>
+    <div class="ticket_support_footer">
+        <div class="support_right_box">{{ ticket.date | date: 'medium' }}</div>
+        <div class="left_box" [ngClass]="{'tikcet_state_outsource': ticket.state === 'Unsolved', 'tikcet_state_outsource_solved': ticket.state !== 'Unsolved'}">{{ ticket.state }}</div>
+        <a routerLink="/dashboard" class="ticket_detail_getback"><button>Go back to dashboard</button></a>
+    </div>
+</div>

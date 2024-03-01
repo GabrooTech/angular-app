@@ -1,0 +1,35 @@
+<app-navigation></app-navigation>
+
+<div class="login_container">
+    <div class="form_box">
+      <div class="form_value">
+        <div *ngIf="isLoading">
+          <app-loading-spinner></app-loading-spinner>
+        </div>
+        <form #login_form="ngForm" (ngSubmit)="on_submit(login_form)" *ngIf="!isLoading">
+          <h2>Login</h2>
+          <div class="inputbox">
+            <input type="text" name="email" class="login_input" value="" ngModel required email #email="ngModel">
+            <i class='bx bxs-user'></i>
+            <label for="email" class="label" [ngClass]="{ 'error' : !email.valid && email.touched}">Email</label>
+            <div class="error" *ngIf="!email.valid && email.touched">Email field is still empty!</div>
+          </div>
+          <div class="inputbox">
+            <input #passwordInput type="password" name="password" class="login_input" value="" ngModel required #password="ngModel">
+            <i class='bx bxs-lock-alt login_lock'></i>
+            <div class="show" #showButton></div>
+            <label for="passwords" class="label" [ngClass]="{ 'error' : !password.valid && password.touched}">Password</label>
+            <div class="error" *ngIf="!password.valid && password.touched">Password field is still empty!</div>
+            <div class="error" *ngIf="error">
+                <p>{{ error }}</p>
+            </div>
+          </div>
+          <button class="login_button reveal" type="submit" [ngClass]="{ 'disabled-icon': !login_form.valid }">Log in</button>
+          <div class="register">
+            <p>Don't have an account <a routerLink="/registration">Register</a></p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+ 

@@ -1,0 +1,24 @@
+<app-navigation></app-navigation>
+<app-content-filter></app-content-filter>
+<div class="product_list_container">
+    <app-search></app-search>
+    <div class="product_layout_grid" id="productList">
+        <div *ngFor="let item of productsWithIds">
+            <div *ngIf="item.product.type === 'MD'">
+                <div class="card" [ngClass]="'id_' + item.id">
+                    <div class="special_deal" *ngIf="item.product.off_price !== 0">{{ item.product.off_price }}%</div>
+                    <div class="card_img_box">
+                        <img src="img/'.$main_img.'" alt="check your internet connection">
+                    </div>
+                    <div class="content_box">
+                        <h3 class="product_name">{{ item.product.product_name }}</h3>
+                        <h2 class="product_price">{{ item.product.final_price }}₾</h2>
+                        <a (click)="checkPorduct(item.id)" class="add_to_cart add_button"><span>Check out</span></a>
+                    </div>
+                </div>
+                <!-- ერთადერთი პრობლემა რაშიც ვიჭედები არის ის რომ ვერ ვახერხებ გარკვეულ სტილბზე ზემოქმედბას დავუშვათ ::before ::after :hover ან სხვა ელემნტები -->
+            </div>
+        </div>
+    </div>
+</div>
+<app-footer></app-footer>

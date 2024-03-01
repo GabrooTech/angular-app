@@ -1,0 +1,55 @@
+<app-navigation></app-navigation>
+<div class="support_container">
+    <h2 class="main_text_support">Select content of issue</h2>
+    <div class="support_problems_list">
+        <a [routerLink]="['/user-issues']" class="support_keyword_linker">
+        <div class="support_problem_account support_problem_common">
+            <div class="support_problem_common_inner_box">
+                <i class='bx bx-user'></i>
+                <h2>User Problem</h2>
+            </div>
+        </div>
+        </a>
+        <a [routerLink]="['/product-issues']" class="support_keyword_linker">
+            <div class="support_problem_product support_problem_common">
+                <div class="support_problem_common_inner_box">
+                    <i class='bx bxs-package'></i>
+                    <h2>Product Problem</h2>
+                </div>
+            </div>
+        </a>
+        <a [routerLink]="['/bug-issues']" class="support_keyword_linker">
+            <div class="support_problem_bug support_problem_common">
+                <div class="support_problem_common_inner_box">
+                    <i class='bx bxs-bug' ></i>
+                    <h2>Undetected Bug</h2>
+                </div>
+            </div>
+        </a>
+        <a [routerLink]="['/informationa-issues']" class="support_keyword_linker">
+            <div class="support_problem_missinformation support_problem_common">
+                <div class="support_problem_common_inner_box">
+                    <i class='bx bx-info-circle' ></i>
+                    <h2>Missleading information</h2>
+                </div>
+            </div>
+        </a>
+        <a [routerLink]="['/security-issues']" class="support_keyword_linker">
+            <div class="support_problem_cybersecurity support_problem_common">
+                <div class="support_problem_common_inner_box">
+                    <i class='bx bx-shield-minus' ></i>
+                    <h2>Cyber Securty Problem</h2>
+                </div>
+            </div>
+        </a>
+        <a [routerLink]="['/other-issues']" class="support_keyword_linker">
+            <div class="support_problem_other support_problem_common">
+                <div class="support_problem_common_inner_box">
+                    <i class='bx bx-dots-horizontal-rounded' ></i>
+                    <h2>Another Problem</h2>
+                </div>
+            </div>
+        </a>
+    </div>
+</div>
+<app-footer></app-footer>

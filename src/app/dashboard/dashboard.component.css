@@ -1,0 +1,8 @@
+.matched_prices_color {
+    background-color: #ffc781;
+    width: 100px;
+}
+.umatched_prices_color {
+    background-color: #ee4e34;
+    width: 100px;
+}
