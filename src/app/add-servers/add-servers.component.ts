@@ -98,7 +98,7 @@ export class AddServersComponent implements AfterViewInit{
           fileDataURL(file).then((dataUrl: string) => {
             const dominantColorNow = this.getDominantColor(image, ctx);
             this.dominant_color = dominantColorNow;
-            console.log('Dominant Color:', dominantColorNow); // Log the dominant color
+            console.log('Dominant Color:', dominantColorNow);
           });
         }
         image.src = readerEvent.target.result as string;
