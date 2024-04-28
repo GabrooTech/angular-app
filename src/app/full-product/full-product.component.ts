@@ -10,7 +10,7 @@ import { DataStorageService } from '../shared/data-storage.service';
 export class FullProductComponent implements OnInit{
   productId: string;
   product: any; 
-  
+  product_brif: any;
 
   constructor(private route: ActivatedRoute, private data_storage: DataStorageService) { }
 
@@ -24,6 +24,14 @@ export class FullProductComponent implements OnInit{
   fetchProductDetails(productId: string) {
     this.data_storage.getProductById(productId).subscribe(product => {
       this.product = product;
+      console.log(product)
     });
   }
+
+  // fetchProductBrifDetails(productId: string){
+  //   this.data_storage.getProductBrif(productId).subscribe(product_brif => {
+  //     this.product_brif = product_brif
+  //     console.log(productId)
+  //   })
+  // }
 }

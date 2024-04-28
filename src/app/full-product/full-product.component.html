@@ -39,6 +39,12 @@
                     <button id="add-animation">Add to Cart</button>
                 </div>
         </div>
+        <div class="grif_description">
+            <div class="grif_escription_inner" *ngFor="let item of product.input_pairs; let i = index">
+                <h1>{{ product.input_pairs[i].value }}</h1>
+                <p>{{ product.input_pairs[i].value1 }}</p>
+            </div>
+        </div>
     </div>
 <app-footer></app-footer>
     

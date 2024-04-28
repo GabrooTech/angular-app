@@ -13,6 +13,7 @@ export class Product {
         public third_img?: string,
         public fourth_img?: string,
         public fifth_img?: string,
+        public input_pairs?: Array<any>
     ) {}
 }
 // ამ შემთხვევაში firebase db ვერ მიკითხავს blob ვერსიას input ისას ამიტომ იძულებული ვარ რომ წავაკითხინო string ვერსია რაც სრულიად აზრს უცვლის ამ

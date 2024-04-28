@@ -13,7 +13,7 @@ export class DataStorageService {
     constructor(private http: HttpClient) {}
 
     productAdded$ = this.productAddedSubject.asObservable();
-    // "ვდილობ" რომ და submit ებული ინფორმაცია subscribe ით ან next ით გამოვიტანო dashboard ში refresh ის გარეშე მაგრამ ჩანს რო არ გამოდის :(
+    // "ვდილობ" რომ და submit ებული ინფორმაცია subscribe ით ან next ით გამოვიტანო dashboard ში refresh ის გარეშე მაგრამ ჩანს რო არ გამოდის :( -- გამოვიდა უბრალოდ change არე უნდა მოხდეს კოდში start ის შემდეგ
     store_product(product: Product): Observable<any> {
         return this.http.post(`${this.firebaseDatabaseUrl}/products.json`, product).pipe(
             tap(() => {

@@ -3395,6 +3395,97 @@ div#product_source_linker {
 .content_box a{
     cursor: pointer;
 }
+.brif_description{
+    height: 100%;
+    margin-top: 150px;
+    border-radius: 15px;
+    width: 89%;
+    border: 1px dashed white;
+    padding: 15px;
+}
+.brif_descipriton_main_input_container{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+.brif_description_main_input{
+    /* color: transparent; */
+    background: transparent;
+    color: white;
+    border: none;
+    border-bottom: 2px solid silver;
+    outline: none;
+    width: 220px;
+    font-family: sans-serif;
+    transition: 0.3s ease-in-out;
+    margin-top: 18px;
+}
+.brif_description_main_label{
+    font-family: math;
+    color: gray;
+    transition: 0.3s ease-in-out;
+    cursor: no-drop;
+}
+.brif_descipriton_main_input_container div{
+    display: flex;
+    gap: 25px;
+    align-items: flex-end;
+}
+.brif_descipriton_main_input_container div button{
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid white;
+    color: white;
+    transition: 0.3s ease-in-out;
+    cursor: pointer;
+}
+.brif_descipriton_main_input_container div button:hover{
+    border-bottom: 2px solid #3b357a;
+}
+.brif_description_output_container{
+    margin-top: 40px;
+}
+.brif_description_input_pair{
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+}
+.brif_description_remove_button{
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid white;
+    color: white;
+    transition: 0.3s ease-in-out;
+    cursor: pointer;
+}
+.brif_description_remove_button:hover{
+    border-bottom: 2px solid #9c2d2d;
+}
+/* .grif_description{
+    border: 2px solid wheat;
+}
+.grif_description_container{
+    display: flex;
+    justify-content: center;
+}
+.grif_description_container div{
+    border: 1px solid wheat;
+    border-radius: 15px;
+    color: white;
+} */
+.grif_description{
+    border: 3px solid wheat;
+}
+.grif_escription_inner h1{
+    border: 2px solid wheat;
+    color: white;
+}
+.grif_escription_inner p{
+    border-bottom: 2px solid wheat;
+    color: white;
+}
 /*//////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
 /*//////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
 /*//////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
@@ -4068,6 +4159,16 @@ div#product_source_linker {
         scale: 0.8;
     }
 }
+@media (max-width: 510px) {
+	.brif_description_output_container{
+		scale: 0.7;
+	}
+}
+@media (max-width: 340px) {
+	.brif_description_output_container{
+		scale: 0.5;
+	}
+}
 /*//////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
 /*//////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
 /*//////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
@@ -4401,26 +4502,26 @@ div#product_source_linker {
         background: white;
     }
     .add_product_main_img_upload_box {
-        background-color: #2a246e;
+        background-color: transparent;
         border: 2px dashed black;
     }
     .add_product_input_textarea{
-        background-color: #2a246e;
+        background-color: transparent;
     }
     .user_crud_container_intor_text{
         color: white;
     }
     .add_product_text_content_container{
-        background-color: #2a246e;
+        background-color: transparent;
     }
     .add_product_text_content_container input{
-        background-color: #2a246e;
+        background-color: transparent;
     }
     .brif_description_add_product_var_inner_grid{
-        background: #2a246e;
+        background: transparent;
     }
     .brif_description_input{
-        background: #2a246e;
+        background: transparent;
     }
     .add_product_input_disclaimer{
         color: ghostwhite;

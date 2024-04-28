@@ -86,6 +86,22 @@
             required></textarea>
             <div class="red-text add_product_product_error"></div>
         </div>
+        <div class="brif_description">
+            <div class="brif_descipriton_main_input_container">
+                <label for="input" class="brif_description_main_label">Please input brief description points</label>
+                <div>
+                    <input type="text" class="brif_description_main_input" [(ngModel)]="initial_input_value" name="initialInput">
+                    <button (click)="addInputPair()">Add</button>
+                </div>
+            </div>
+            <div class="brif_description_output_container">
+                <div *ngFor="let pair of inputPairs; let i = index" class="brif_description_input_pair">
+                  <input type="text" [(ngModel)]="pair.value" name="inputPair_{{i * 2}}" required class="brif_description_main_input">
+                  <input type="text" [(ngModel)]="pair.value1" name="inputPair_{{i * 2 + 1}}" class="brif_description_main_input">
+                  <button (click)="removeInputPair(i)" class="brif_description_remove_button">Remove</button>
+                </div>
+            </div>
+        </div>
         <div class="last_output_add_product_container">
             <input type="text" mame="type" value="Accessories" ngModel [ngModelOptions]="{standalone: true}">
             <input type="number" name="final_price" #final_price_output [(ngModel)]="final_price_outter">

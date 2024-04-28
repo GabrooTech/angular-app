@@ -44,6 +44,9 @@ export class AddServersComponent implements AfterViewInit{
   @ViewChild('icon_fifth') icon_fifth: ElementRef;
   @ViewChild('text_fifth') text_fifth: ElementRef;
 
+
+  initial_input_value: string = '';
+  inputPairs: any[] = [];
   final_price_outter: number;
   dominant_color: string;
   isLoading = false;
@@ -68,6 +71,13 @@ export class AddServersComponent implements AfterViewInit{
     );
     this.setupPriceCalculations(); 
     this.setupDominantColor();
+  }
+  addInputPair() {
+    this.inputPairs.push({ value: this.initial_input_value, value1: '' });
+    this.initial_input_value = '';
+  }
+  removeInputPair(index: number) {
+    this.inputPairs.splice(index, 1);
   }
 // dominant ი ფერის გამოთვლის დასაწყისი
   private setupDominantColor() {
@@ -179,7 +189,8 @@ export class AddServersComponent implements AfterViewInit{
       value.second_img,
       value.third_img,
       value.fourth_img,
-      value.fifth_img
+      value.fifth_img,
+      this.inputPairs
     );
     this.isLoading = true;
     this.dataStorageService.store_product(newProduct)
